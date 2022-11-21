@@ -3,11 +3,11 @@ import ifcopenshell
 import ifcopenshell.template
 from regex import F
 
-for num_sites, num_buildings, assign_to_site in itertools.product(range(3), range(3), (0, 1)):
+for num_sites, num_buildings, assign_to_site in itertools.product(range(4), range(3), (0, 1)):
     if num_sites == 0 and assign_to_site == 1:
         continue
 
-    f = ifcopenshell.template.create(schema_identifier="IFC2X3")
+    f = ifcopenshell.template.create(schema_identifier="IFC4X3")
     building_parent = proj = f.by_type("IfcProject")[0]
     owner = f.by_type("IfcOwnerHistory")[0]
     
